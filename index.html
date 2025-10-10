@@ -3,544 +3,728 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>武井大知の履歴書・ES</title>
+    <title>武井大知 - 履歴書・ポートフォリオ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #4a4a4a;
+            --accent-color: #3a7ca5;
+            --warm-accent: #e67e22;
+            --text-light: #666666;
+            --background: #fdfdfd;
+            --card-background: #ffffff;
+            --border-color: #e8e8e8;
+            --subtle-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --border-radius: 6px;
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            line-height: 1.8;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.7;
+            color: var(--primary-color);
+            background-color: var(--background);
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
+            background-size: 20px 20px;
         }
+
         .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
         }
+
+        /* Header Styles */
         .header {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 50px 40px;
+            margin-bottom: 40px;
             text-align: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+        }
+
+        .profile-section {
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        .header img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-right: 20px;
-            object-fit: cover;
-            border: 3px solid #eee;
-        }
-        .header-text h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .header-text p {
-            margin: 0;
-            font-size: 1.2em;
-            color: #666;
-        }
-        h2 {
-            font-size: 1.8em;
-            border-left: 5px solid #007bff;
-            padding-left: 10px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-        .section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .section li {
-            margin-bottom: 10px;
-        }
-        .meta {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .download-section {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #eee;
-        }
-        .download-btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: #fff;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 0 10px;
-            transition: background-color 0.3s;
-        }
-        .download-btn:hover {
-            background-color: #0056b3;
-        }
-        .project {
+            gap: 40px;
             margin-bottom: 30px;
         }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
+
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid var(--border-color);
+            object-fit: cover;
+        }
+
+        .name-section h1 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 2.8rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .name-section .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+        }
+
+        .contact-item {
+            text-align: left;
+            padding: 8px 0;
+        }
+
+        .contact-label {
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-right: 8px;
+        }
+
+        /* Section Styles */
+        .section {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
             overflow: hidden;
-            max-width: 100%;
-            background: #eee;
-            margin-top: 15px;
-            border-radius: 8px;
         }
-        .video-container iframe,
-        .video-container object,
-        .video-container embed {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+
+        .section-header {
+            background-color: var(--background);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 30px;
         }
-        .video-container p {
-            color: #666;
+
+        .section-header h2 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 25px;
+        }
+
+        /* Download Section */
+        .download-section {
             text-align: center;
-            margin-top: 25%;
+            padding: 40px 30px;
         }
-        .contact-form {
-            margin-top: 20px;
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
         }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            background-color: #2c5f7a;
+        }
+
+        .btn-secondary {
+            background-color: var(--warm-accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: #d35400;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+        }
+
+        .skill-category h4 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 4px 0;
+            color: var(--primary-color);
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Project Section */
+        .project {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .project h3 {
+            font-family: 'Shippori Mincho', serif;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .project-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .project-section {
+            margin-bottom: 25px;
+        }
+
+        .project-section h4 {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        /* Form Styles */
         .form-group {
             margin-bottom: 20px;
         }
+
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: var(--primary-color);
         }
+
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background-color: var(--card-background);
         }
-        .submit-btn {
-            display: inline-block;
-            background-color: #28a745;
-            color: #fff;
-            padding: 12px 25px;
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background-color: #f5f5f5;
+            margin: 20px 0;
+        }
+
+        .video-container p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* List Styles */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list .label {
+            color: var(--accent-color);
+            min-width: 100px;
+            font-weight: 500;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 25px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 2px solid var(--card-background);
+        }
+
+        .timeline-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .timeline-content {
+            color: var(--primary-color);
+        }
+
+        /* Links */
+        a {
+            color: var(--accent-color);
             text-decoration: none;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s;
+            transition: var(--transition);
         }
-        .submit-btn:hover {
-            background-color: #218838;
+
+        a:hover {
+            color: #2c5f7a;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .name-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .section-content {
+                padding: 20px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Subtle improvements */
+        .section:hover {
+            border-color: #d0d0d0;
+        }
+
+        .card:hover {
+            border-color: #d0d0d0;
+        }
+
+        .project:hover {
+            border-color: var(--accent-color);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <img src="images/profile.png" alt="プロフィール写真">
-            <div class="header-text">
-                <h1>武井 大知</h1>
-                <p>Shonan Institute of Technology</p>
-            </div>
-        </div>
-
-        <div class="download-section">
-            <h2>PDFダウンロード</h2>
-            <a href="pdfs/resume.pdf" download class="download-btn">履歴書 (PDF)</a>
-            <a href="pdfs/resume_with_es.pdf" download class="download-btn">履歴書+ES (PDF)</a>
-        </div>
-
-        <div class="section">
-            <h2>基本情報</h2>
-            <ul>
-                <li><strong>氏名:</strong> 武井 大知 (タケイ ダイチ)</li>
-                <li><strong>生年月日:</strong> 2004年3月11日 (満21歳)</li>
-                <li><strong>現住所:</strong> 〒194-0032 東京都町田市本町田２１９－４</li>
-                <li><strong>電話番号:</strong> 080-8739-2922</li>
-                <li><strong>メール:</strong> 08087392922a@gmail.com</li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/jyouhou291" target="_blank">jyouhou291</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>就活の軸</h2>
-            <p>
-                業界についてはIT業界のみを志望しており、特に「新しい知識を継続的に得られる環境であるか」を企業選びの軸としています。自身の技術力を高め、それを事業の成長に貢献させるサイクルを回していける企業で働きたいと考えています。<br><br>
-                加えて、自身の現状として、Python以外の言語や、AI・フロントエンドといった専門分野についてはここ半年ほどで学習を始めたばかりです。そのため、入社後の研修制度が充実しており、実務を通じて着実に知識をインプTプットし、成長していける安心感のある環境であるかどうかも、もう一つの重要な軸として考えています。
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>志望の動機・自己PRなど</h2>
-            <p>
-                私は、情報技術を通じて社会課題の解決に貢献したいと考え、貴社を志望いたします。貴社の事業に強く関心を持ち、私の技術力を活かして貴社の発展に貢献したいと考えております。
-                大学ではJavaScriptやC言語の基礎を学びましたが、特にPythonには2年以上の開発経験があります。その経験を活かし、本ポートフォリオにも掲載している通り、Pygameやtkinterを用いたGUIで操作可能な「歩きスマホ」の社会シミュレーションを設計・実装しました。この開発を通じて、オブジェクト指向プログラミング、プロセス間通信、データ可視化といった実践的なスキルを深く学びました。
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>選考でお話したいこと</h2>
-            <p>
-                私は、実践的な開発を通じて学ぶことを重視する一方で、時に体系的な知識の習得とのバランスに課題を感じることがあります。また、短期的にタスクが集中した際の効率的な進め方についても、より良い方法を模索しております。もし機会をいただけるようでしたら、貴社で活躍されているエンジニアの方々が、どのように学習のバランスを取り、またタスクが輻輳した際にどのように乗り越えているか、ぜひお話を伺ってみたいです。
-            </p>
-            <p style="margin-top: 20px;">
-                もし私の経歴にご興味を持っていただけましたら、差し支えなければ以下のフォームから貴社名をお知らせいただけますと幸いです。今後の選考の参考にさせていただきます。
-            </p>
-            <form action="https://formspree.io/f/mldplqwn" method="POST" class="contact-form" style="margin-top: 10px;">
-                <div class="form-group">
-                    <label for="company_name">貴社名:</label>
-                    <input type="text" id="company_name" name="貴社名" required>
+        <!-- Header -->
+        <header class="header">
+            <div class="profile-section">
+                <img src="images/profile.png" alt="プロフィール写真" class="profile-image">
+                <div class="name-section">
+                    <h1>武井 大知</h1>
+                    <p class="subtitle">湘南工科大学 情報学部 情報学科</p>
                 </div>
-                <button type="submit" class="submit-btn">送信</button>
-            </form>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-label">メール:</span>
+                    <span>08087392922a @gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">電話:</span>
+                    <span>080-8739-2922</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">GitHub:</span>
+                    <a href="https://github.com/jyouhou291" target="_blank">jyouhou291</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">住所:</span>
+                    <span>東京都町田市</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Download Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2>履歴書ダウンロード</h2>
+            </div>
+            <div class="download-section">
+                <p>履歴書とエントリーシートをPDF形式でご覧いただけます。</p>
+                <div class="download-buttons">
+                    <a href="pdfs/resume.pdf" download class="btn">履歴書 (PDF)</a>
+                    <a href="pdfs/resume_with_es.pdf" download class="btn btn-secondary">履歴書+ES (PDF)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic Info -->
+        <section class="section">
+            <div class="section-header">
+                <h2>基本情報</h2>
+            </div>
+            <div class="section-content">
+                <ul class="info-list">
+                    <li>
+                        <span class="label">氏名:</span>
+                        <span>武井 大知 (タケイ ダイチ)</span>
+                    </li>
+                    <li>
+                        <span class="label">生年月日:</span>
+                        <span>2004年3月11日 (満21歳)</span>
+                    </li>
+                    <li>
+                        <span class="label">現住所:</span>
+                        <span>〒194-0032 東京都町田市本町田２１９－４</span>
+                    </li>
+                    <li>
+                        <span class="label">電話番号:</span>
+                        <span>080-8739-2922</span>
+                    </li>
+                    <li>
+                        <span class="label">メール:</span>
+                        <span>08087392922a @gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="label">GitHub:</span>
+                        <span><a href="https://github.com/jyouhou291" target="_blank">jyouhou291</a></span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Career Goals and Motivation -->
+        <div class="grid">
+            <section class="section">
+                <div class="section-header">
+                    <h2>就活の軸</h2>
+                </div>
+                <div class="section-content">
+                    <p>
+                        業界についてはIT業界のみを志望しており、特に「新しい知識を継続的に得られる環境であるか」を企業選びの軸としています。自身の技術力を高め、それを事業の成長に貢献させるサイクルを回していける企業で働きたいと考えています。
+                    </p>
+                    <p style="margin-top: 15px;">
+                        加えて、自身の現状として、Python以外の言語や、AI・フロントエンドといった専門分野についてはここ半年ほどで学習を始めたばかりです。そのため、入社後の研修制度が充実しており、実務を通じて着実に知識をインプットし、成長していける安心感のある環境であるかどうかも、もう一つの重要な軸として考えています。
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2>志望の動機・自己PR</h2>
+                </div>
+                <div class="section-content">
+                    <p>
+                        私は、情報技術を通じて社会課題の解決に貢献したいと考え、貴社を志望いたします。大学ではJavaScriptやC言語の基礎を学びましたが、特にPythonには2年以上の開発経験があります。
+                    </p>
+                    <p style="margin-top: 15px;">
+                        その経験を活かし、本ポートフォリオにも掲載している通り、Pygameやtkinterを用いたGUIで操作可能な「歩きスマホ」の社会シミュレーションを設計・実装しました。この開発を通じて、オブジェクト指向プログラミング、プロセス間通信、データ可視化といった実践的なスキルを深く学びました。
+                    </p>
+                </div>
+            </section>
         </div>
 
-        <div class="section">
-            <h2>学歴</h2>
-            <ul>
-                <li><span class="meta">2023年4月 – 2027年3月 (卒業見込み)</span><br>湘南工科大学 情報学部 情報学科</li>
-                <li><span class="meta">2019年4月 – 2022年3月</span><br>世田谷学園高等学校</li>
-                <li><span class="meta">2016年4月 – 2019年3月</span><br>世田谷学園中学校</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>職歴</h2>
-            <ul>
-                <li>なし</li>
-            </ul>
-        </div>
+        <!-- Education & Career -->
+        <div class="grid">
+            <section class="section">
+                <div class="section-header">
+                    <h2>学歴</h2>
+                </div>
+                <div class="section-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023年4月 – 2027年3月 (卒業見込み)</div>
+                            <div class="timeline-content">湘南工科大学 情報学部 情報学科</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2019年4月 – 2022年3月</div>
+                            <div class="timeline-content">世田谷学園高等学校</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2016年4月 – 2019年3月</div>
+                            <div class="timeline-content">世田谷学園中学校</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <div class="section">
-            <h2>保有スキル</h2>
-            <p>「歩きスマホのシミュレーション」開発では、主に以下の技術を使用しました。</p>
-            <ul style="list-style-type: none; padding-left: 0;">
-                <li><strong>言語:</strong><br>Python, JavaScript, C言語</li>
-                <li style="margin-top: 10px;"><strong>ライブラリ:</strong><br>Pygame (描画・メインループ), tkinter (GUI操作パネル), Matplotlib (データ可視化), NumPy (数値計算)</li>
-                <li style="margin-top: 10px;"><strong>ツール:</strong><br>Git, GitHub (バージョン管理・コード公開)</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>現在学習中の技術</h2>
-            <p>
-                現在は、LMM（大規模言語モデル）のローカル環境での活用に強い関心を持ち、Meta社の「Llama」などを実際に自身のPCで動作させながら、その仕組みや応用方法について学習を進めています。
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>免許・資格</h2>
-            <ul>
-                <li>JDLA Deep Learning For GENERAL（G検定） (2025年9月 合格)</li>
-            </ul>
+            <section class="section">
+                <div class="section-header">
+                    <h2>免許・資格</h2>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h4 style="color: var(--accent-color); margin-bottom: 8px;">JDLA Deep Learning For GENERAL（G検定）</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">2025年9月 合格</p>
+                    </div>
+                </div>
+            </section>
         </div>
 
-        <div class="section">
-            <h2>本人希望記入欄</h2>
-            <p>貴社規定に従います。</p>
-        </div>
+        <!-- Skills -->
+        <section class="section">
+            <div class="section-header">
+                <h2>保有スキル</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 25px;">「歩きスマホのシミュレーション」開発では、主に以下の技術を使用しました。</p>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>プログラミング言語</h4>
+                        <ul class="skill-list">
+                            <li>Python（2年以上の経験）</li>
+                            <li>JavaScript</li>
+                            <li>C言語</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>ライブラリ・フレームワーク</h4>
+                        <ul class="skill-list">
+                            <li>Pygame（描画・メインループ）</li>
+                            <li>tkinter（GUI操作パネル）</li>
+                            <li>Matplotlib（データ可視化）</li>
+                            <li>NumPy（数値計算）</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>開発ツール</h4>
+                        <ul class="skill-list">
+                            <li>Git</li>
+                            <li>GitHub（バージョン管理・コード公開）</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>現在学習中の技術</h4>
+                        <ul class="skill-list">
+                            <li>LMM（大規模言語モデル）</li>
+                            <li>Meta社の「Llama」</li>
+                            <li>AI・機械学習</li>
+                            <li>フロントエンド開発</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="section">
-            <h2>制作実績</h2>
-            <div class="project">
-                <h3>歩きスマホのシミュレーション</h3>
-                <p class="meta">Python | Pygame | tkinter | matplotlib</p>
-                
-                <h4>概要</h4>
-                <p>
-                    このプロジェクトは、PythonとPygameライブラリを使用して開発された、歩行者シミュレーション環境です。特に「歩きスマホ」が歩行者の行動に与える影響を可視化し、パラメータを変えながらその危険性を分析することを目的としています。GUIでパラメータ（歩きスマホ率、歩行者の発生頻度など）を簡単に変更でき、シミュレーションと分析グラフがリアルタイムで連携して動作します。
-                </p>
-
-                <h4>頑張ったところ</h4>
-                <p>
-                    開発では主に3つの課題に取り組みました。<br>
-                    <b>1. GUIの安定化:</b> 当初利用していた<code>pygame-gui</code>では日本語表示が不安定だったため、Python標準の<code>tkinter</code>（操作パネル）と<code>matplotlib</code>（分析グラフ）を別々のプログラムとして作成する構成に変更し、安定動作を実現しました。<br>
-                    <b>2. プロセス間の連携:</b> 3つのプログラムを連携させるため、設定はコマンドライン引数で渡し、シミュレーション状況はJSONファイルを介して共有するシンプルなファイルベース通信を採用しました。これにより、複雑な同期処理を避けつつ、ほぼリアルタイムな連携を可能にしました。<br>
-                    <b>3. 正確な衝突計測:</b> エージェントが重なっている間、衝突が連続でカウントされてしまう問題を解決するため、前のフレームで接触済みのペアを記憶し、新規の接触のみを「1回」としてカウントするロジックを導入しました。これにより、データ計測の信頼性を大幅に向上させました。
-                </p>
-
-                <h4>現在の課題</h4>
-                <p>
-                    現在の課題として、通常歩行者（青色）の回避行動が挙げられます。特に、複数のエージェントが関わる場面で回避モーションの連続がうまくいかず、時間が経過すると集団が詰まってしまう（デッドロック状態に陥る）ことがあります。今後の改善点として、より高度で人間らしい、連続的な状況判断に基づいた回避アルゴリズムを実装することを検討しています。
-                </p>
-
-                <h4>プロジェクトのダウンロード</h4>
-                <a href="https://github.com/jyouhou291/pygame_simu" target="_blank" rel="noopener noreferrer" class="download-btn" style="background-color: #5a6268;">GitHubリポジトリを見る</a>
-
-                <h4>メインプログラム (`simulation.py`)</h4>
-                <div class="code-container">
-                    <pre><code># =============================================================================
-# 歩きスマホ行動シミュレーション (v16.2 - Simulation Engine)
-# =============================================================================
-import pygame
-import numpy as np
-import argparse
-import math
-import json
-from dataclasses import dataclass, field
-from collections import deque
-import sys
-import os
-
-# --- 定数・設定クラス (変更なし) ---
-@dataclass
-class Config:
-    WIDTH_M: float = 30.0; SIDEWALK_HEIGHT_M: float = 2.5; ROAD_HEIGHT_M: float = 4.0
-    AGENT_RADIUS_M: float = 0.3; V0_MEAN: float = 1.3; V0_STD: float = 0.2; MAX_SPEED_M_S: float = 2.0
-    REACTION_TIME_DEFAULT_S: float = 0.2; REACTION_TIME_PHONE_S: float = 0.556
-    FOV_DEFAULT_DEG: float = 120.0; FOV_PHONE_DEG: float = 90.0
-    AVOID_BETA_PHONE: float = 0.7; SPEED_ALPHA_PHONE: float = 0.85
-    RELAXATION_TIME_TAU_S: float = 0.5; AGENT_REPULSION_A: float = 2.1
-    AGENT_REPULSION_B_PHONE: float = 0.3; AGENT_REPULSION_B_NORMAL: float = 2.0
-    WALL_REPULSION_A: float = 3.0; WALL_REPULSION_B: float = 0.1
-    NORMAL_EVASION_BOOST: float = 1.8; SHUFFLE_EVASION_BOOST: float = 0.5; SHOULDER_PASS_BOOST: float = 0.9
-    FORWARD_EVASION_BOOST: float = 1.5
-    M_TO_PX: int = 25; FOV_VIS_RADIUS_M: float = 1.0
-    SIDEWALK_COLOR: tuple = (200, 200, 200); ROAD_COLOR: tuple = (105, 105, 105); LINE_COLOR: tuple = (255, 255, 100)
-    AGENT_COLOR: tuple = (0, 100, 200); AGENT_PHONE_COLOR: tuple = (220, 50, 50); COLLISION_MARKER_COLOR: tuple = (255, 0, 0)
-    TOTAL_HEIGHT_M: float = field(init=False); WIDTH_PX: int = field(init=False); HEIGHT_PX: int = field(init=False)
-    def __post_init__(self):
-        self.TOTAL_HEIGHT_M = 2 * self.SIDEWALK_HEIGHT_M + self.ROAD_HEIGHT_M
-        self.WIDTH_PX = int(self.WIDTH_M * self.M_TO_PX)
-        self.HEIGHT_PX = int(self.TOTAL_HEIGHT_M * self.M_TO_PX)
-
-# --- エージェントクラス (変更なし) ---
-@dataclass
-class Pedestrian:
-    id: int; config: Config; phone_user: bool; pos: np.ndarray; vel: np.ndarray; v0: float; direction: int
-    radius: float = field(init=False); reaction_time: float = field(init=False); fov_rad: float = field(init=False); avoid_beta: float = field(init=False); v_desired_magnitude: float = field(init=False)
-    history: deque = field(default_factory=lambda: deque(maxlen=60)); spawn_time: float = 0.0; exit_time: float = -1.0; collisions_count: int = 0
-    def __post_init__(self):
-        self.radius = self.config.AGENT_RADIUS_M
-        if self.phone_user: self.reaction_time, self.fov_rad, self.avoid_beta, self.v_desired_magnitude = self.config.REACTION_TIME_PHONE_S, np.deg2rad(self.config.FOV_PHONE_DEG), self.config.AVOID_BETA_PHONE, self.v0 * self.config.SPEED_ALPHA_PHONE
-        else: self.reaction_time, self.fov_rad, self.avoid_beta, self.v_desired_magnitude = self.config.REACTION_TIME_DEFAULT_S, np.deg2rad(self.config.FOV_DEFAULT_DEG), 1.0, self.v0
-    def get_delayed_state(self, t: float) -> np.ndarray:
-        tt=t-self.reaction_time; 
-        if not self.history or tt<=self.history[0][0]: return self.history[0][1] if self.history else self.pos
-        for i in range(len(self.history)-1): 
-            if self.history[i][0]<=tt<self.history[i+1][0]: return self.history[i][1]
-        return self.history[-1][1]
-    def draw(self, s: pygame.Surface):
-        px_pos=(int(self.pos[0]*self.config.M_TO_PX), int(self.pos[1]*self.config.M_TO_PX)); color=self.config.AGENT_PHONE_COLOR if self.phone_user else self.config.AGENT_COLOR
-        pygame.draw.circle(s, color, px_pos, int(self.config.AGENT_RADIUS_M * self.config.M_TO_PX))
-        if np.linalg.norm(self.vel)>0.1:
-            a=math.atan2(-self.vel[1],self.vel[0]); r=int(self.config.FOV_VIS_RADIUS_M*self.config.M_TO_PX); rect=pygame.Rect(px_pos[0]-r,px_pos[1]-r,2*r,2*r); sa,ea=a-self.fov_rad/2,a+self.fov_rad/2; fov_c=tuple(min(255,c+80) for c in color)
-            try: pygame.draw.arc(s,fov_c,rect,sa,ea,1); pygame.draw.line(s,fov_c,px_pos,(px_pos[0]+r*math.cos(sa),px_pos[1]-r*math.sin(sa)),1); pygame.draw.line(s,fov_c,px_pos,(px_pos[0]+r*math.cos(ea),px_pos[1]-r*math.sin(ea)),1)
-            except TypeError: pass
-
-# --- シミュレーション本体クラス ---
-class Simulation:
-    def __init__(self, args):
-        self.args = args; self.config = Config(); np.random.seed(42)
-        pygame.init()
-        self.screen = pygame.display.set_mode((self.config.WIDTH_PX, self.config.HEIGHT_PX))
-        pygame.display.set_caption("歩きスマホ行動シミュレーション")
-        self.font = pygame.font.Font(None, 32); self.big_font = pygame.font.Font(None, 72)
-        self.clock = pygame.time.Clock(); self.dt = 1.0 / 60.0
-        self.is_running = True; self.sim_time = 0.0; self.is_paused = False
-        self.speed_multiplier = args.speed
-        self.agents = []; self.completed_agents = []; self.next_agent_id = 0
-        self.total_collisions = 0
-        self.phone_users_completed = 0; self.normal_users_completed = 0
-        self.phone_user_total_collisions = 0; self.normal_user_total_collisions = 0
-        self.collision_markers = []; self.ongoing_collisions = set()
-        self._define_walkable_areas()
-
-    def _define_walkable_areas(self):
-        self.sidewalk_top_y_range_m = (0, self.config.SIDEWALK_HEIGHT_M)
-        self.sidewalk_bottom_y_range_m = (self.config.SIDEWALK_HEIGHT_M + self.config.ROAD_HEIGHT_M, self.config.TOTAL_HEIGHT_M)
-
-    def _spawn_pedestrian(self):
-        if np.random.rand() < self.args.spawn_rate * self.dt:
-            direction = 1 if np.random.rand() < 0.5 else -1
-            y_range = self.sidewalk_top_y_range_m if np.random.rand() < 0.5 else self.sidewalk_bottom_y_range_m
-            # 修正点1: スポーン位置を少し広げる
-            if direction == 1:
-                pos_x = np.random.uniform(self.config.AGENT_RADIUS_M, self.config.AGENT_RADIUS_M * 3)
-            else:
-                pos_x = np.random.uniform(self.config.WIDTH_M - self.config.AGENT_RADIUS_M * 3, self.config.WIDTH_M - self.config.AGENT_RADIUS_M)
-            pos = np.array([pos_x, np.random.uniform(y_range[0] + self.config.AGENT_RADIUS_M, y_range[1] - self.config.AGENT_RADIUS_M)])
-            if any(np.linalg.norm(pos - a.pos) < 2 * self.config.AGENT_RADIUS_M for a in self.agents): return
-            v0 = np.random.normal(self.config.V0_MEAN, self.config.V0_STD)
-            self.agents.append(Pedestrian(id=self.next_agent_id, config=self.config, phone_user=np.random.rand()<self.args.p_phone, pos=pos, vel=np.array([v0*direction,0]), v0=v0, direction=direction, spawn_time=self.sim_time)); self.next_agent_id+=1
-
-    def _update_agents(self):
-        for agent in self.agents: agent.history.append((self.sim_time, agent.pos.copy()))
-        current_frame_overlaps = set()
-        forces = {agent.id: np.zeros(2) for agent in self.agents}
-
-        for i, agent in enumerate(self.agents):
-            f_avoid = np.zeros(2)
-            speed_dampening_factor = 1.0
-            for j, other in enumerate(self.agents):
-                if i == j: continue
-                vec_to_other = other.get_delayed_state(self.sim_time) - agent.get_delayed_state(self.sim_time); dist = np.linalg.norm(vec_to_other)
-                
-                if dist < agent.radius + other.radius:
-                    pair = tuple(sorted((agent.id, other.id)))
-                    current_frame_overlaps.add(pair)
-                    if pair not in self.ongoing_collisions:
-                        agent.collisions_count += 1; other.collisions_count += 1; self.total_collisions += 1
-                        self.collision_markers.append((agent.pos + vec_to_other / 2, self.sim_time))
-                
-                is_in_fov = True
-                if np.linalg.norm(agent.vel) > 0.1 and dist > 0:
-                    if abs(np.arccos(np.clip(np.dot(agent.vel/np.linalg.norm(agent.vel), vec_to_other/dist), -1.0, 1.0))) > agent.fov_rad/2:
-                        is_in_fov = False
-                
-                if is_in_fov:
-                    if dist < self.config.AGENT_RADIUS_M * 4: speed_dampening_factor = max(0.6, speed_dampening_factor - 0.1)
-                    repulsion_b = self.config.AGENT_REPULSION_B_NORMAL if not agent.phone_user else self.config.AGENT_REPULSION_B_PHONE
-                    force_mag = self.config.AGENT_REPULSION_A * np.exp((agent.radius + other.radius - dist) / repulsion_b)
-                    evasion_boost = 1.0
-                    if not agent.phone_user: # Agent is blue
-                        use_default_logic = True
-                        # Special case for blue-on-blue interaction
-                        if not other.phone_user:
-                            is_red_nearby = any(
-                                red.phone_user and np.linalg.norm(agent.pos - red.pos) < 7.0
-                                for red in self.agents
-                            )
-                            if not is_red_nearby:
-                                evasion_boost = self.config.SHOULDER_PASS_BOOST # Shoulder-to-shoulder
-                                use_default_logic = False
-
-                        if use_default_logic:
-                            relative_vel = other.vel - agent.vel
-                            if np.dot(vec_to_other, relative_vel) < 0:
-                                if np.random.rand() < (1/3):
-                                    evasion_boost = self.config.SHUFFLE_EVASION_BOOST
-                                else:
-                                    evasion_boost = self.config.NORMAL_EVASION_BOOST
-                            else:
-                                evasion_boost = self.config.NORMAL_EVASION_BOOST
+        <!-- Projects -->
+        <section class="section">
+            <div class="section-header">
+                <h2>制作実績</h2>
+            </div>
+            <div class="section-content">
+                <div class="project">
+                    <h3>歩きスマホのシミュレーション</h3>
+                    <p class="project-meta">Python | Pygame | tkinter | matplotlib</p>
                     
-                    # --- 前方注意ブースト (青エージェントのみ) ---
-                    if not agent.phone_user and np.linalg.norm(agent.vel) > 0.1 and dist > 0:
-                        # 自分の進行方向と相手へのベクトルのなす角度のコサインを計算
-                        cos_angle = np.dot(agent.vel, vec_to_other) / (np.linalg.norm(agent.vel) * dist)
-                        if cos_angle > 0.9: # 進行方向の約25度以内に相手がいる場合
-                            evasion_boost *= self.config.FORWARD_EVASION_BOOST
-                            
-                    force_direction = -vec_to_other / dist if dist > 0 else np.zeros(2)
-                    f_avoid += agent.avoid_beta * evasion_boost * force_mag * force_direction
-            
-            v_desired_vec = np.array([agent.v_desired_magnitude * agent.direction * speed_dampening_factor, 0])
-            f_drive = (v_desired_vec - agent.vel) / self.config.RELAXATION_TIME_TAU_S
-            y_range = self.sidewalk_top_y_range_m if agent.pos[1] < self.config.TOTAL_HEIGHT_M / 2 else self.sidewalk_bottom_y_range_m
-            f_wall = np.zeros(2)
-            f_wall += np.array([0, self.config.WALL_REPULSION_A * np.exp((agent.radius - (agent.pos[1] - y_range[0])) / self.config.WALL_REPULSION_B)])
-            f_wall += np.array([0, -self.config.WALL_REPULSION_A * np.exp((agent.radius - (y_range[1] - agent.pos[1])) / self.config.WALL_REPULSION_B)])
-            forces[agent.id] = f_drive + f_avoid + f_wall
+                    <div class="project-section">
+                        <h4>概要</h4>
+                        <p>
+                            このプロジェクトは、PythonとPygameライブラリを使用して開発された、歩行者シミュレーション環境です。特に「歩きスマホ」が歩行者の行動に与える影響を可視化し、パラメータを変えながらその危険性を分析することを目的としています。GUIでパラメータ（歩きスマホ率、歩行者の発生頻度など）を簡単に変更でき、シミュレーションと分析グラフがリアルタイムで連携して動作します。
+                        </p>
+                    </div>
 
-        for agent in self.agents:
-            agent.vel += forces[agent.id] * self.dt
-            speed = np.linalg.norm(agent.vel)
-            if speed > self.config.MAX_SPEED_M_S: agent.vel *= self.config.MAX_SPEED_M_S / speed
-            agent.pos += agent.vel * self.dt
-            # 修正点2: X座標も画面内にクリップする
-            agent.pos[0] = np.clip(agent.pos[0], 0, self.config.WIDTH_M)
-            y_range = self.sidewalk_top_y_range_m if agent.pos[1] < self.config.TOTAL_HEIGHT_M / 2 else self.sidewalk_bottom_y_range_m
-            agent.pos[1] = np.clip(agent.pos[1], y_range[0] + agent.radius, y_range[1] - agent.radius)
+                    <div class="project-section">
+                        <h4>頑張ったところ</h4>
+                        <p>開発では主に3つの課題に取り組みました。</p>
+                        <div style="margin-top: 15px;">
+                            <p><strong>1. GUIの安定化:</strong> 当初利用していた<code>pygame-gui</code>では日本語表示が不安定だったため、Python標準の<code>tkinter</code>（操作パネル）と<code>matplotlib</code>（分析グラフ）を別々のプログラムとして作成する構成に変更し、安定動作を実現しました。</p>
+                            <p style="margin-top: 10px;"><strong>2. プロセス間の連携:</strong> 3つのプログラムを連携させるため、設定はコマンドライン引数で渡し、シミュレーション状況はJSONファイルを介して共有するシンプルなファイルベース通信を採用しました。これにより、複雑な同期処理を避けつつ、ほぼリアルタイムな連携を可能にしました。</p>
+                            <p style="margin-top: 10px;"><strong>3. 正確な衝突計測:</strong> エージェントが重なっている間、衝突が連続でカウントされてしまう問題を解決するため、前のフレームで接触済みのペアを記憶し、新規の接触のみを「1回」としてカウントするロजिकを導入しました。これにより、データ計測の信頼性を大幅に向上させました。</p>
+                        </div>
+                    </div>
 
-        self.ongoing_collisions = current_frame_overlaps
-        despawn_candidates = [a for a in self.agents if (self.sim_time - a.spawn_time > 2.0) and ((a.direction==1 and a.pos[0]>=self.config.WIDTH_M)or(a.direction==-1 and a.pos[0]<=0))]
-        for agent in despawn_candidates:
-            agent.exit_time=self.sim_time; self.completed_agents.append(agent)
-            if agent.phone_user: self.phone_users_completed += 1; self.phone_user_total_collisions += agent.collisions_count
-            else: self.normal_users_completed += 1; self.normal_user_total_collisions += agent.collisions_count
-        self.agents=[a for a in self.agents if a.exit_time<0]
+                    <div class="project-section">
+                        <h4>現在の課題</h4>
+                        <p>
+                            現在の課題として、通常歩行者（青色）の回避行動が挙げられます。特に、複数のエージェントが関わる場面で回避モーションの連続がうまくいかず、時間が経過すると集団が詰まってしまう（デッドロック状態に陥る）ことがあります。今後の改善点として、より高度で人間らしい、連続的な状況判断に基づいた回避アルゴリズムを実装することを検討しています。
+                        </p>
+                    </div>
 
-    def _draw(self):
-        self.screen.fill(self.config.ROAD_COLOR)
-        pygame.draw.rect(self.screen,self.config.SIDEWALK_COLOR,pygame.Rect(0,0,self.config.WIDTH_PX,self.config.SIDEWALK_HEIGHT_M*self.config.M_TO_PX))
-        pygame.draw.rect(self.screen,self.config.SIDEWALK_COLOR,pygame.Rect(0,(self.config.SIDEWALK_HEIGHT_M+self.config.ROAD_HEIGHT_M)*self.config.M_TO_PX,self.config.WIDTH_PX,self.config.SIDEWALK_HEIGHT_M*self.config.M_TO_PX))
-        for x in range(0,self.config.WIDTH_PX,40): pygame.draw.line(self.screen,self.config.LINE_COLOR,(x,self.config.TOTAL_HEIGHT_M/2*self.config.M_TO_PX),(x+20,self.config.TOTAL_HEIGHT_M/2*self.config.M_TO_PX),3)
-        for agent in self.agents: agent.draw(self.screen)
-        self.collision_markers = [m for m in self.collision_markers if self.sim_time - m[1] < 1.5]
-        for pos, timestamp in self.collision_markers:
-            alpha = max(0, 255 * (1 - (self.sim_time - timestamp) / 1.5))
-            marker_surface = pygame.Surface((30, 30), pygame.SRCALPHA)
-            pygame.draw.circle(marker_surface, (*self.config.COLLISION_MARKER_COLOR, int(alpha)), (15, 15), 15)
-            px_pos = (int(pos[0] * self.config.M_TO_PX) - 15, int(pos[1] * self.config.M_TO_PX) - 15)
-            self.screen.blit(marker_surface, px_pos)
-        time_text = self.font.render(f"Time: {self.sim_time:.1f}s", True, (255, 255, 255)); self.screen.blit(time_text, (10, 10))
-        if self.is_paused:
-            paused_text = self.big_font.render("PAUSED", True, (255, 255, 0)); text_rect = paused_text.get_rect(center=self.screen.get_rect().center); self.screen.blit(paused_text, text_rect)
-        pygame.display.flip()
+                    <div class="project-section">
+                        <h4>プロジェクトのダウンロード</h4>
+                        <a href="https://github.com/jyouhou291/pygame_simu" target="_blank" rel="noopener noreferrer" class="btn">GitHubリポジトリを見る</a>
+                    </div>
 
-    def _write_live_data(self):
-        current_avg_speed = np.mean([np.linalg.norm(a.vel) for a in self.agents]) if self.agents else 0
-        rate_phone = self.phone_user_total_collisions / self.phone_users_completed if self.phone_users_completed > 0 else 0
-        rate_normal = self.normal_user_total_collisions / self.normal_users_completed if self.normal_users_completed > 0 else 0
-        data = {"time": self.sim_time, "agent_count": len(self.agents), "completed_count": len(self.completed_agents), "total_collisions": self.total_collisions, "avg_speed": current_avg_speed, "collision_rate_phone": rate_phone, "collision_rate_normal": rate_normal}
-        try:
-            with open("live_data.json", "w") as f: json.dump(data, f)
-        except IOError as e: print(f"Error writing live data: {e}")
-
-    def run(self):
-        while self.is_running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q): self.is_running = False
-                if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE: self.is_paused = not self.is_paused
-            if not self.is_paused:
-                for _ in range(self.speed_multiplier):
-                    self._spawn_pedestrian(); self._update_agents(); self.sim_time += self.dt
-            self._draw()
-            if int(self.sim_time * 10) % 2 == 0: self._write_live_data()
-            self.clock.tick(60)
-        pygame.quit(); sys.exit()
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--p_phone', type=float, default=0.3); parser.add_argument('--spawn_rate', type=float, default=1.0)
-    parser.add_argument('--speed', type=int, default=1, help='Simulation speed multiplier.')
-    sim = Simulation(parser.parse_args())
-    sim.run()
-
-if __name__ == '__main__':
-    main()
-                    </code></pre>
-                </div>
-                
-                <h4>デモ動画</h4>
-                <div class="video-container">
-                    <!-- YouTubeなどに動画をアップロードし、その埋め込みコードをここに貼り付けます -->
-                    <p>（後ほど動画を追加予定）</p>
+                    <div class="project-section">
+                        <h4>デモ動画</h4>
+                        <div class="video-container">
+                            <p>（後ほど動画を追加予定）</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>お問い合わせ</h2>
-            <p>ご用件がございましたら、以下のフォームよりお気軽にご連絡ください。</p>
-            <form action="https://formspree.io/f/mldplqwn" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="name">お名前:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">メールアドレス:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">メッセージ:</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">送信</button>
-            </form>
-        </div>
+        <!-- Interview Topics -->
+        <section class="section">
+            <div class="section-header">
+                <h2>選考でお話したいこと</h2>
+            </div>
+            <div class="section-content">
+                <p>
+                    私は、実践的な開発を通じて学ぶことを重視する一方で、時に体系的な知識の習得とのバランスに課題を感じることがあります。また、短期的にタスクが集中した際の効率的な進め方についても、より良い方法を模索しております。
+                </p>
+                <p style="margin-top: 15px;">
+                    もし機会をいただけるようでしたら、貴社で活躍されているエンジニアの方々が、どのように学習のバランスを取り、またタスクが輻輳した際にどのように乗り越えているか、ぜひお話を伺ってみたいです。
+                </p>
+                <p style="margin-top: 20px;">
+                    もし私の経歴にご興味を持っていただけましたら、差し支えなければ以下のフォームから貴社名をお知らせいただけますと幸いです。今後の選考の参考にさせていただきます。
+                </p>
+                <form action="https://formspree.io/f/mldplqwn" method="POST" style="margin-top: 20px;">
+                    <div class="form-group">
+                        <label for="company_name">貴社名:</label>
+                        <input type="text" id="company_name" name="貴社名" required>
+                    </div>
+                    <button type="submit" class="btn">送信</button>
+                </form>
+            </div>
+        </section>
 
+        <!-- Contact -->
+        <section class="section">
+            <div class="section-header">
+                <h2>お問い合わせ</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 25px;">ご用件がございましたら、以下のフォームよりお気軽にご連絡ください。</p>
+                <form action="https://formspree.io/f/mldplqwn" method="POST">
+                    <div class="form-group">
+                        <label for="name">お名前:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">メッセージ:</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">送信</button>
+                </form>
+            </div>
+        </section>
     </div>
 </body>
 </html>
