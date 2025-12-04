@@ -3,729 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>武井大知 - 履歴書・ポートフォリオ</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+    <title>武井 大知 | ポートフォリオ</title>
+    <meta name="description" content="武井大知のポートフォリオサイト。湘南工科大学 情報学部。Python開発経験、歩きスマホシミュレーションなど。">
     <style>
+        /* シンプルで見やすいデザイン設定 */
         :root {
-            --primary-color: #4a4a4a;
-            --accent-color: #3a7ca5;
-            --warm-accent: #e67e22;
-            --text-light: #666666;
-            --background: #fdfdfd;
-            --card-background: #ffffff;
-            --border-color: #e8e8e8;
-            --subtle-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-            --border-radius: 6px;
-            --transition: all 0.2s ease;
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
         }
-
-        * {
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.7;
-            color: var(--primary-color);
-            background-color: var(--background);
-            background-image: 
-                radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
-            background-size: 20px 20px;
-        }
-
         .container {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 30px 20px;
-        }
-
-        /* Header Styles */
-        .header {
-            background-color: var(--card-background);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 50px 40px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .profile-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .profile-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 3px solid var(--border-color);
-            object-fit: cover;
-        }
-
-        .name-section h1 {
-            font-family: 'Shippori Mincho', serif;
-            font-size: 2.8rem;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        .name-section .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            font-weight: 400;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 0.95rem;
-        }
-
-        .contact-item {
-            text-align: left;
-            padding: 8px 0;
-        }
-
-        .contact-label {
-            font-weight: 500;
-            color: var(--accent-color);
-            margin-right: 8px;
-        }
-
-        /* Section Styles */
-        .section {
-            background-color: var(--card-background);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        .section-header {
-            background-color: var(--background);
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 30px;
-        }
-
-        .section-header h2 {
-            font-family: 'Shippori Mincho', serif;
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--primary-color);
-        }
-
-        .section-content {
-            padding: 30px;
-        }
-
-        /* Grid Layout */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .card {
-            background-color: var(--card-background);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 25px;
-        }
-
-        /* Download Section */
-        .download-section {
-            text-align: center;
-            padding: 40px 30px;
-        }
-
-        .download-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            font-weight: 500;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .btn:hover {
-            background-color: #2c5f7a;
-        }
-
-        .btn-secondary {
-            background-color: var(--warm-accent);
-        }
-
-        .btn-secondary:hover {
-            background-color: #d35400;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
             padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
-
-        .skill-category h4 {
-            color: var(--accent-color);
-            margin-bottom: 15px;
-            font-size: 1rem;
-            font-weight: 500;
+        
+        /* ヘッダー周り */
+        header {
+            text-align: center;
+            padding: 40px 0 20px;
+            border-bottom: 2px solid #eee;
         }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            padding: 4px 0;
-            color: var(--primary-color);
-            border-bottom: 1px dotted var(--border-color);
-        }
-
-        .skill-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* Project Section */
-        .project {
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin-bottom: 25px;
-        }
-
-        .project h3 {
-            font-family: 'Shippori Mincho', serif;
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-
-        .project-meta {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .project-section {
-            margin-bottom: 25px;
-        }
-
-        .project-section h4 {
-            color: var(--accent-color);
-            font-size: 1rem;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 500;
-            color: var(--primary-color);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            background-color: var(--card-background);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-        }
-
-        /* Video Container */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            background-color: #f5f5f5;
-            margin: 20px 0;
-        }
-
-        .video-container p {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        /* List Styles */
-        .info-list {
-            list-style: none;
-        }
-
-        .info-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .info-list li:last-child {
-            border-bottom: none;
-        }
-
-        .info-list .label {
-            color: var(--accent-color);
-            min-width: 100px;
-            font-weight: 500;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background-color: var(--border-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-            padding-left: 25px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
+        .profile-img {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            background-color: var(--accent-color);
-            border: 2px solid var(--card-background);
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 15px;
         }
-
-        .timeline-date {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
-
-        .timeline-content {
+        h1 {
+            margin: 0;
             color: var(--primary-color);
+            font-size: 2.2rem;
         }
-
-        /* Links */
-        a {
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        .contact-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
             color: var(--accent-color);
             text-decoration: none;
-            transition: var(--transition);
+            font-weight: bold;
         }
-
-        a:hover {
-            color: #2c5f7a;
+        .contact-links a:hover {
             text-decoration: underline;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
-                gap: 20px;
-            }
+        /* セクション共通 */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        h3 {
+            margin-top: 30px;
+            color: #444;
+        }
+        h4 {
+            margin-bottom: 5px;
+            color: #555;
+        }
 
-            .name-section h1 {
-                font-size: 2.2rem;
-            }
+        /* ボタン */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+        /* リストとタグ */
+        ul {
+            padding-left: 20px;
+        }
+        .skill-tag {
+            display: inline-block;
+            background: #eee;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 0 5px 5px 0;
+            font-size: 0.9rem;
+        }
 
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .download-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
+        /* フォーム */
+        .contact-form {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* パディングを含める */
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 600px) {
             .container {
-                padding: 20px 15px;
+                padding: 15px;
             }
-
-            .section-content {
-                padding: 20px;
-            }
-
-            .header {
-                padding: 30px 20px;
-            }
-        }
-
-        /* Subtle improvements */
-        .section:hover {
-            border-color: #d0d0d0;
-        }
-
-        .card:hover {
-            border-color: #d0d0d0;
-        }
-
-        .project:hover {
-            border-color: var(--accent-color);
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="profile-section">
-                <img src="images/profile.png" alt="プロフィール写真" class="profile-image">
-                <div class="name-section">
-                    <h1>武井 大知</h1>
-                    <p class="subtitle">湘南工科大学 情報学部 情報学科</p>
-                </div>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <span class="contact-label">メール:</span>
-                    <span>08087392922a @gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">電話:</span>
-                    <span>080-8739-2922</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">GitHub:</span>
-                    <a href="https://github.com/jyouhou291" target="_blank">jyouhou291</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">住所:</span>
-                    <span>東京都町田市</span>
-                </div>
-            </div>
-        </header>
 
-        <!-- Download Section -->
-        <section class="section">
-            <div class="section-header">
-                <h2>履歴書ダウンロード</h2>
-            </div>
-            <div class="download-section">
-                <p>履歴書とエントリーシートをPDF形式でご覧いただけます。</p>
-                <div class="download-buttons">
-                    <a href="pdfs/resume.pdf" download class="btn">履歴書 (PDF)</a>
-                    <a href="pdfs/resume_with_es.pdf" download class="btn btn-secondary">履歴書+ES (PDF)</a>
-                </div>
-            </div>
-        </section>
+<div class="container">
+    <header>
+        <img src="images/profile.png" alt="武井 大知" class="profile-img" onerror="this.style.display='none'">
+        <h1>武井 大知</h1>
+        <p class="subtitle">湘南工科大学 情報学部 情報学科 | エンジニア志望</p>
+        
+        <div class="contact-links">
+            <a href="mailto:08087392922a @gmail.com">Email: 08087392922a @gmail.com</a>
+            <a href="https://github.com/jyouhou291" target="_blank">GitHub: jyouhou291</a>
+            <span>📍 東京都町田市</span>
+        </div>
+    </header>
 
-        <!-- Basic Info -->
-        <section class="section">
-            <div class="section-header">
-                <h2>基本情報</h2>
-            </div>
-            <div class="section-content">
-                <ul class="info-list">
-                    <li>
-                        <span class="label">氏名:</span>
-                        <span>武井 大知 (タケイ ダイチ)</span>
-                    </li>
-                    <li>
-                        <span class="label">生年月日:</span>
-                        <span>2004年3月11日 (満21歳)</span>
-                    </li>
-                    <li>
-                        <span class="label">現住所:</span>
-                        <span>〒194-0032 東京都町田市本町田２１９－４</span>
-                    </li>
-                    <li>
-                        <span class="label">電話番号:</span>
-                        <span>080-8739-2922</span>
-                    </li>
-                    <li>
-                        <span class="label">メール:</span>
-                        <span>08087392922a @gmail.com</span>
-                    </li>
-                    <li>
-                        <span class="label">GitHub:</span>
-                        <span><a href="https://github.com/jyouhou291" target="_blank">jyouhou291</a></span>
-                    </li>
-                </ul>
-            </div>
-        </section>
+    <section id="downloads">
+        <h2>履歴書・職務経歴書</h2>
+        <p>詳細はPDF形式でご覧いただけます。</p>
+        <div>
+            <a href="pdfs/resume.pdf" class="btn btn-outline" target="_blank">📄 履歴書 (PDF)</a>
+            <a href="pdfs/resume_with_es.pdf" class="btn btn-outline" target="_blank">📄 履歴書 + ES (PDF)</a>
+        </div>
+    </section>
 
-        <!-- Career Goals and Motivation -->
-        <div class="grid">
-            <section class="section">
-                <div class="section-header">
-                    <h2>就活の軸</h2>
-                </div>
-                <div class="section-content">
-                    <p>
-                        業界についてはIT業界のみを志望しており、特に「新しい知識を継続的に得られる環境であるか」を企業選びの軸としています。自身の技術力を高め、それを事業の成長に貢献させるサイクルを回していける企業で働きたいと考えています。
-                    </p>
-                    <p style="margin-top: 15px;">
-                        加えて、自身の現状として、Python以外の言語や、AI・フロントエンドといった専門分野についてはここ半年ほどで学習を始めたばかりです。そのため、入社後の研修制度が充実しており、実務を通じて着実に知識をインプットし、成長していける安心感のある環境であるかどうかも、もう一つの重要な軸として考えています。
-                    </p>
-                </div>
-            </section>
+    <section id="about">
+        <h2>基本情報</h2>
+        <ul>
+            <li><strong>氏名:</strong> 武井 大知 (タケイ ダイチ)</li>
+            <li><strong>生年月日:</strong> 2004年3月11日 (満21歳)</li>
+            <li><strong>居住地:</strong> 東京都町田市</li>
+        </ul>
+    </section>
 
-            <section class="section">
-                <div class="section-header">
-                    <h2>志望の動機・自己PR</h2>
-                </div>
-                <div class="section-content">
-                    <p>
-                        私は、情報技術を通じて社会課題の解決に貢献したいと考え、貴社を志望いたします。大学ではJavaScriptやC言語の基礎を学びましたが、特にPythonには2年以上の開発経験があります。
-                    </p>
-                    <p style="margin-top: 15px;">
-                        その経験を活かし、本ポートフォリオにも掲載している通り、Pygameやtkinterを用いたGUIで操作可能な「歩きスマホ」の社会シミュレーションを設計・実装しました。この開発を通じて、オブジェクト指向プログラミング、プロセス間通信、データ可視化といった実践的なスキルを深く学びました。
-                    </p>
-                </div>
-            </section>
+    <section id="axis">
+        <h2>就活の軸</h2>
+        <p>
+            業界についてはIT業界のみを志望しており、特に「新しい知識を継続的に得られる環境であるか」を企業選びの軸としています。自身の技術力を高め、それを事業の成長に貢献させるサイクルを回していける企業で働きたいと考えています。
+        </p>
+        <p>
+            加えて、自身の現状として、Python以外の言語や、AI・フロントエンドといった専門分野についてはここ半年ほどで学習を始めたばかりです。そのため、入社後の研修制度が充実しており、実務を通じて着実に知識をインプットし、成長していける安心感のある環境であるかどうかも、重要な軸として考えています。
+        </p>
+    </section>
+
+    <section id="motivation">
+        <h2>志望動機・自己PR</h2>
+        <p>
+            私は、情報技術を通じて社会課題の解決に貢献したいと考え、貴社を志望いたします。大学ではJavaScriptやC言語の基礎を学びましたが、特にPythonには2年以上の開発経験があります。
+        </p>
+        <p>
+            その経験を活かし、本ポートフォリオにも掲載している通り、Pygameやtkinterを用いたGUIで操作可能な「歩きスマホ」の社会シミュレーションを設計・実装しました。この開発を通じて、オブジェクト指向プログラミング、プロセス間通信、データ可視化といった実践的なスキルを深く学びました。
+        </p>
+    </section>
+
+    <section id="education">
+        <h2>学歴</h2>
+        <ul>
+            <li><strong>2023年4月 – 2027年3月 (卒業見込み):</strong><br>湘南工科大学 情報学部 情報学科</li>
+            <li><strong>2019年4月 – 2022年3月:</strong><br>世田谷学園高等学校</li>
+        </ul>
+    </section>
+
+    <section id="certifications">
+        <h2>免許・資格</h2>
+        <ul>
+            <li><strong>JDLA Deep Learning For GENERAL（G検定）:</strong> 2025年9月 合格</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>保有スキル</h2>
+        
+        <h3>プログラミング言語</h3>
+        <div>
+            <span class="skill-tag">Python (2年以上)</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">C言語</span>
         </div>
 
-        <!-- Education & Career -->
-        <div class="grid">
-            <section class="section">
-                <div class="section-header">
-                    <h2>学歴</h2>
-                </div>
-                <div class="section-content">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">2023年4月 – 2027年3月 (卒業見込み)</div>
-                            <div class="timeline-content">湘南工科大学 情報学部 情報学科</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2019年4月 – 2022年3月</div>
-                            <div class="timeline-content">世田谷学園高等学校</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2016年4月 – 2019年3月</div>
-                            <div class="timeline-content">世田谷学園中学校</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="section-header">
-                    <h2>免許・資格</h2>
-                </div>
-                <div class="section-content">
-                    <div class="card">
-                        <h4 style="color: var(--accent-color); margin-bottom: 8px;">JDLA Deep Learning For GENERAL（G検定）</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">2025年9月 合格</p>
-                    </div>
-                </div>
-            </section>
+        <h3>ライブラリ・フレームワーク</h3>
+        <div>
+            <span class="skill-tag">Pygame</span>
+            <span class="skill-tag">tkinter</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">NumPy</span>
         </div>
 
-        <!-- Skills -->
-        <section class="section">
-            <div class="section-header">
-                <h2>保有スキル</h2>
-            </div>
-            <div class="section-content">
-                <p style="margin-bottom: 25px;">「歩きスマホのシミュレーション」開発では、主に以下の技術を使用しました。</p>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>プログラミング言語</h4>
-                        <ul class="skill-list">
-                            <li>Python（2年以上の経験）</li>
-                            <li>JavaScript</li>
-                            <li>C言語</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>ライブラリ・フレームワーク</h4>
-                        <ul class="skill-list">
-                            <li>Pygame（描画・メインループ）</li>
-                            <li>tkinter（GUI操作パネル）</li>
-                            <li>Matplotlib（データ可視化）</li>
-                            <li>NumPy（数値計算）</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>開発ツール</h4>
-                        <ul class="skill-list">
-                            <li>Git</li>
-                            <li>GitHub（バージョン管理・コード公開）</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>現在学習中の技術</h4>
-                        <ul class="skill-list">
-                            <li>LMM（大規模言語モデル）</li>
-                            <li>Meta社の「Llama」</li>
-                            <li>AI・機械学習</li>
-                            <li>フロントエンド開発</li>
-                            <li>Google CLI</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <h3>開発ツール・その他</h3>
+        <div>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">Google CLI</span>
+        </div>
+
+        <h3>現在学習中の技術</h3>
+        <div>
+            <span class="skill-tag">LMM (Llama等)</span>
+            <span class="skill-tag">AI・機械学習</span>
+            <span class="skill-tag">フロントエンド開発</span>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2>制作実績</h2>
+        <h3>歩きスマホのシミュレーション</h3>
+        <p>Python | Pygame | tkinter | matplotlib</p>
+        
+        <h4>概要</h4>
+        <p>
+            「歩きスマホ」が歩行者の行動に与える影響を可視化し、危険性を分析するシミュレーターです。GUIでパラメータ（歩きスマホ率など）を変更でき、リアルタイムでグラフ分析が可能です。
+        </p>
+        
+        <h4>工夫した点</h4>
+        <ul>
+            <li><strong>GUIの安定化:</strong> `pygame-gui`から標準ライブラリの`tkinter`へ移行し、日本語表示と操作の安定性を確保。</li>
+            <li><strong>プロセス間連携:</strong> JSONファイルを介したシンプルな通信設計により、シミュレーションとグラフ描画の非同期連携を実現。</li>
+            <li><strong>正確な衝突計測:</strong> 重複カウントを防ぐロジックを導入し、データ計測の信頼性を向上。</li>
+        </ul>
+
+        <h4>現在の課題</h4>
+        <p>
+            通常歩行者の回避アルゴリズムの改善（デッドロックの解消）に取り組んでいます。
+        </p>
+        
+        <div style="margin-top: 20px;">
+            <a href="https://github.com/jyouhou291/pygame_simu" class="btn" target="_blank">GitHubリポジトリを見る</a>
+            <span style="color:#666; font-size:0.9rem;">※デモ動画は準備中です</span>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>お問い合わせ</h2>
+        <p>
+            ご質問やご連絡は、以下のボタンからメールにてお願いいたします。
+        </p>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="mailto:08087392922a @gmail.com?subject=ポートフォリオ経由のお問い合わせ&body=お名前：%0D%0Aご用件：" class="btn">
+                メールを送る
+            </a>
+        </div>
+        
         </section>
+    
+    <footer style="text-align: center; padding: 20px; color: #888; font-size: 0.8rem;">
+        &copy; 2025 Daichi Takei. All Rights Reserved.
+    </footer>
+</div>
 
-        <!-- Projects -->
-        <section class="section">
-            <div class="section-header">
-                <h2>制作実績</h2>
-            </div>
-            <div class="section-content">
-                <div class="project">
-                    <h3>歩きスマホのシミュレーション</h3>
-                    <p class="project-meta">Python | Pygame | tkinter | matplotlib</p>
-                    
-                    <div class="project-section">
-                        <h4>概要</h4>
-                        <p>
-                            このプロジェクトは、PythonとPygameライブラリを使用して開発された、歩行者シミュレーション環境です。特に「歩きスマホ」が歩行者の行動に与える影響を可視化し、パラメータを変えながらその危険性を分析することを目的としています。GUIでパラメータ（歩きスマホ率、歩行者の発生頻度など）を簡単に変更でき、シミュレーションと分析グラフがリアルタイムで連携して動作します。
-                        </p>
-                    </div>
-
-                    <div class="project-section">
-                        <h4>頑張ったところ</h4>
-                        <p>開発では主に3つの課題に取り組みました。</p>
-                        <div style="margin-top: 15px;">
-                            <p><strong>1. GUIの安定化:</strong> 当初利用していた<code>pygame-gui</code>では日本語表示が不安定だったため、Python標準の<code>tkinter</code>（操作パネル）と<code>matplotlib</code>（分析グラフ）を別々のプログラムとして作成する構成に変更し、安定動作を実現しました。</p>
-                            <p style="margin-top: 10px;"><strong>2. プロセス間の連携:</strong> 3つのプログラムを連携させるため、設定はコマンドライン引数で渡し、シミュレーション状況はJSONファイルを介して共有するシンプルなファイルベース通信を採用しました。これにより、複雑な同期処理を避けつつ、ほぼリアルタイムな連携を可能にしました。</p>
-                            <p style="margin-top: 10px;"><strong>3. 正確な衝突計測:</strong> エージェントが重なっている間、衝突が連続でカウントされてしまう問題を解決するため、前のフレームで接触済みのペアを記憶し、新規の接触のみを「1回」としてカウントするロजिकを導入しました。これにより、データ計測の信頼性を大幅に向上させました。</p>
-                        </div>
-                    </div>
-
-                    <div class="project-section">
-                        <h4>現在の課題</h4>
-                        <p>
-                            現在の課題として、通常歩行者（青色）の回避行動が挙げられます。特に、複数のエージェントが関わる場面で回避モーションの連続がうまくいかず、時間が経過すると集団が詰まってしまう（デッドロック状態に陥る）ことがあります。今後の改善点として、より高度で人間らしい、連続的な状況判断に基づいた回避アルゴリズムを実装することを検討しています。
-                        </p>
-                    </div>
-
-                    <div class="project-section">
-                        <h4>プロジェクトのダウンロード</h4>
-                        <a href="https://github.com/jyouhou291/pygame_simu" target="_blank" rel="noopener noreferrer" class="btn">GitHubリポジトリを見る</a>
-                    </div>
-
-                    <div class="project-section">
-                        <h4>デモ動画</h4>
-                        <div class="video-container">
-                            <p>（後ほど動画を追加予定）</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interview Topics -->
-        <section class="section">
-            <div class="section-header">
-                <h2>選考でお話したいこと</h2>
-            </div>
-            <div class="section-content">
-                <p>
-                    私は、実践的な開発を通じて学ぶことを重視する一方で、時に体系的な知識の習得とのバランスに課題を感じることがあります。また、短期的にタスクが集中した際の効率的な進め方についても、より良い方法を模索しております。
-                </p>
-                <p style="margin-top: 15px;">
-                    もし機会をいただけるようでしたら、貴社で活躍されているエンジニアの方々が、どのように学習のバランスを取り、またタスクが輻輳した際にどのように乗り越えているか、ぜひお話を伺ってみたいです。
-                </p>
-                <p style="margin-top: 20px;">
-                    もし私の経歴にご興味を持っていただけましたら、差し支えなければ以下のフォームから貴社名をお知らせいただけますと幸いです。今後の選考の参考にさせていただきます。
-                </p>
-                <form action="https://formspree.io/f/mldplqwn" method="POST" style="margin-top: 20px;">
-                    <div class="form-group">
-                        <label for="company_name">貴社名:</label>
-                        <input type="text" id="company_name" name="貴社名" required>
-                    </div>
-                    <button type="submit" class="btn">送信</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="section">
-            <div class="section-header">
-                <h2>お問い合わせ</h2>
-            </div>
-            <div class="section-content">
-                <p style="margin-bottom: 25px;">ご用件がございましたら、以下のフォームよりお気軽にご連絡ください。</p>
-                <form action="https://formspree.io/f/mldplqwn" method="POST">
-                    <div class="form-group">
-                        <label for="name">お名前:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">メールアドレス:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">メッセージ:</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">送信</button>
-                </form>
-            </div>
-        </section>
-    </div>
 </body>
 </html>
