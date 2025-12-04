@@ -175,10 +175,20 @@
 
     <section id="downloads">
         <h2>履歴書・職務経歴書</h2>
-        <p>詳細はPDF形式でご覧いただけます。</p>
-        <div>
-            <a href="pdfs/resume.pdf" class="btn btn-outline" target="_blank">📄 履歴書 (PDF)</a>
-            <a href="pdfs/resume_with_es.pdf" class="btn btn-outline" target="_blank">📄 履歴書 + ES (PDF)</a>
+        <p>履歴書・職務経歴書をご希望の方は、お手数ですが以下のフォームに貴社名と送付先のメールアドレスをご記入の上、送信してください。後ほど、担当者様宛に送付させていただきます。</p>
+        <div class="contact-form" style="max-width: 600px; margin: 20px auto 0;">
+            <form action="https://formspree.io/f/mldplqwn" method="POST">
+                <div class="form-group">
+                    <label for="company_name">貴社名</label>
+                    <input type="text" id="company_name" name="会社名" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="送付先メールアドレス" required>
+                </div>
+                <input type="hidden" name="_subject" value="ポートフォリオからの履歴書リクエスト">
+                <button type="submit" class="btn" style="width: 100%;">送信</button>
+            </form>
         </div>
     </section>
 
